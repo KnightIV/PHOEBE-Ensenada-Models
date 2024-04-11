@@ -1,0 +1,265 @@
+\name = allVizieR
+\ID = VizieR_0
+\desc = all VizieR catalogues
+\matches = 51
+\Warning = increase the precision for computed column 9
+\Warning = increase the precision for computed column 9
+\Warning = increase the precision for computed column 11
+\Warning = increase the precision for computed column 11
+\Warning = increase the precision for computed column 10
+\Warning = change VO format int  (%08d) to char
+\Warning = change VO format int  (%02d) to char
+\Warning = change VO format int  (%03d) to char
+\Warning = change VO format int  (%03d) to char
+\Warning = vc_coo: explicit note that pmRA does NOT contain cos(DE) factor
+\Warning = vc_coo can't change epoch
+\Warning = (patch vizier 20171220) accept several mainpos to add _V column
+\Warning = change VO format int  (%02d) to char
+\Warning = change VO format int  (%02d) to char
+\Warning = change VO format int  (%02d) to char
+\Warning = change VO format int  (%02d) to char
+\Warning = change VO format int  (%02d) to char
+\Warning = change VO format int  (%02d) to char
+\Warning = change VO format int  (%02d) to char
+\Warning = change VO format int  (%02d) to char
+\Warning = vc_coo can't change epoch
+\Warning = change VO format int  (%05d) to char
+\Warning = (patch vizier 20171220) accept several mainpos to add _V column
+\Warning = (patch vizier 20171220) accept several mainpos to add _V column
+\Warning = SED skip value for I/360/syntphot.FF814W=0.000000 
+\Warning = SED skip value for I/360/syntphot.FI=0.000000 
+\Warning = SED skip value for I/360/syntphot.FR=0.000000 
+\Warning = SED skip value for I/360/syntphot.FF606W=0.000000 
+\Warning = SED skip value for I/360/syntphot.FV=0.000000 
+\Warning = SED skip value for I/360/syntphot.FB=0.000000 
+\Warning = SED skip value for I/360/syntphot.FU=0.000000 
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = (patch vizier 20171220) accept several mainpos to add _V column
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = (patch vizier 20171220) accept several mainpos to add _V column
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\Warning = vc_coo can't change epoch
+\
+|_RAJ2000    |_DEJ2000   |_tabname                 |_time         |_etime|_sed_freq   |_sed_flux|_sed_eflux|_sed_filter         |
+|double      |double     |char                     |double        |double|double      |float    |float     |char                |
+|deg         |deg        |                         |d             |      |GHz         |Jy       |Jy        |                    |
+|            |           |                         |              |      |            |         |          |                    |
+ 347.36608750 54.85605833 I/275/ac2002                                0.0 5.636300E+05 8.980E-02            HIP:VT               
+ 347.36608750 54.85605833 I/275/ac2002                                0.0 7.132800E+05 4.570E-02            HIP:BT               
+ 347.36610801 54.85644629 I/280B/ascc                                 0.0 1.385500E+05 9.710E-02   1.70E-03 2MASS:Ks             
+ 347.36610801 54.85644629 I/280B/ascc                                 0.0 1.817500E+05 1.400E-01   2.00E-03 2MASS:H              
+ 347.36610801 54.85644629 I/280B/ascc                                 0.0 2.419600E+05 1.570E-01   3.00E-03 2MASS:J              
+ 347.36610732 54.85644679 I/294A/ucac2bss                             0.0 1.817500E+05 1.400E-01            2MASS:H              
+ 347.36610732 54.85644679 I/294A/ucac2bss                             0.0 2.419600E+05 1.570E-01            2MASS:J              
+ 347.36610732 54.85644679 I/294A/ucac2bss                             0.0 5.636300E+05 8.980E-02            HIP:VT               
+ 347.36610732 54.85644679 I/294A/ucac2bss                             0.0 7.132800E+05 4.580E-02            HIP:BT               
+ 347.36610720 54.85644670 I/297/out                                   0.0 1.385500E+05 9.710E-02            2MASS:Ks             
+ 347.36610720 54.85644670 I/297/out                                   0.0 1.817500E+05 1.400E-01            2MASS:H              
+ 347.36610720 54.85644670 I/297/out                                   0.0 2.419600E+05 1.570E-01            2MASS:J              
+ 347.36610800 54.85644700 I/305/out                                   0.0 6.749000E+05 4.940E-02   6.80E-03 Johnson:B            
+ 347.36611100 54.85645800 I/317/sample                                0.0 1.385500E+05 9.700E-02   1.80E-03 2MASS:Ks             
+ 347.36611100 54.85645800 I/317/sample                                0.0 1.817500E+05 1.400E-01   2.00E-03 2MASS:H              
+ 347.36611100 54.85645800 I/317/sample                                0.0 2.419600E+05 1.570E-01   3.00E-03 2MASS:J              
+ 347.36609912 54.85645998 I/319/xpm                                   0.0 1.385500E+05 9.700E-02   1.80E-03 2MASS:Ks             
+ 347.36609912 54.85645998 I/319/xpm                                   0.0 1.817500E+05 1.400E-01   2.00E-03 2MASS:H              
+ 347.36609912 54.85645998 I/319/xpm                                   0.0 2.419600E+05 1.570E-01   3.00E-03 2MASS:J              
+ 347.36611980 54.85646480 I/322A/out                                  0.0 1.385500E+05 9.700E-02   1.80E-03 2MASS:Ks             
+ 347.36611980 54.85646480 I/322A/out                                  0.0 1.817500E+05 1.400E-01   3.00E-03 2MASS:H              
+ 347.36611980 54.85646480 I/322A/out                                  0.0 2.419600E+05 1.570E-01   3.00E-03 2MASS:J              
+ 347.36612212 54.85645712 I/337/gaia                                      4.454600E+05 9.730E-02            Gaia:G               
+ 347.36612212 54.85645712 I/337/tgasptyc                                  5.636300E+05 8.980E-02   8.40E-03 HIP:VT               
+ 347.36612212 54.85645712 I/337/tgasptyc                                  7.132800E+05 4.580E-02   6.40E-03 HIP:BT               
+ 347.36612139 54.85645958 I/339/hsoy                                  0.0 1.817500E+05 1.400E-01   2.00E-03 2MASS:H              
+ 347.36612139 54.85645958 I/339/hsoy                                  0.0 2.419600E+05 1.570E-01   3.00E-03 2MASS:J              
+ 347.36612139 54.85645958 I/339/hsoy                                  0.0 4.454600E+05 9.730E-02   6.00E-04 Gaia:G               
+ 347.36612555 54.85645890 I/340/ucac5                                 0.0 1.817500E+05 1.400E-01            2MASS:H              
+ 347.36612555 54.85645890 I/340/ucac5                                 0.0 2.419600E+05 1.570E-01            2MASS:J              
+ 347.36612555 54.85645890 I/340/ucac5                                 0.0 4.454600E+05 9.730E-02            Gaia:G               
+ 347.36611950 54.85637880 I/342/f3                                    0.0 6.749000E+05 4.340E-02   1.60E-03 Johnson:B            
+ 347.36612589 54.85645764 I/345/gaia2                                 0.0 3.881000E+05 1.330E-01   1.00E-03 GAIA/GAIA2:Grp       
+ 347.36612589 54.85645764 I/345/gaia2                                 0.0 4.815000E+05 9.840E-02   3.00E-04 GAIA/GAIA2:G         
+ 347.36612589 54.85645764 I/345/gaia2                                 0.0 5.941000E+05 7.070E-02   6.00E-04 GAIA/GAIA2:Gbp       
+ 347.36612301 54.85646297 I/350/gaiaedr3                              0.0 3.934000E+05 1.310E-01   1.00E-03 GAIA/GAIA3:Grp       
+ 347.36612301 54.85646297 I/350/gaiaedr3                              0.0 5.149000E+05 9.580E-02   3.00E-04 GAIA/GAIA3:G         
+ 347.36612301 54.85646297 I/350/gaiaedr3                              0.0 5.953000E+05 7.220E-02   5.00E-04 GAIA/GAIA3:Gbp       
+ 347.36610934 54.85645333 I/350/tyc2tdsc                              0.0 5.636300E+05 8.980E-02   8.40E-03 HIP:VT               
+ 347.36610934 54.85645333 I/350/tyc2tdsc                              0.0 7.132800E+05 4.580E-02   6.40E-03 HIP:BT               
+ 347.36612589 54.85645764 I/353/gsc242                                    1.357100E+04 1.890E-03            WISE:W4              
+ 347.36612589 54.85645764 I/353/gsc242                                    2.593400E+04 4.730E-03   1.30E-04 WISE:W3              
+ 347.36612589 54.85645764 I/353/gsc242                                    6.517200E+04 2.510E-02   5.00E-04 WISE:W2              
+ 347.36612589 54.85645764 I/353/gsc242                                    8.949000E+04 4.640E-02   1.00E-03 WISE:W1              
+ 347.36612589 54.85645764 I/353/gsc242                                    1.385500E+05 9.700E-02   1.80E-03 2MASS:Ks             
+ 347.36612589 54.85645764 I/353/gsc242                                    1.817500E+05 1.400E-01   2.00E-03 2MASS:H              
+ 347.36612589 54.85645764 I/353/gsc242                                    2.419600E+05 1.570E-01   3.00E-03 2MASS:J              
+ 347.36612589 54.85645764 I/353/gsc242                                    4.454600E+05 6.030E-02   5.00E-04 Gaia:G               
+ 347.36612589 54.85645764 I/353/gsc242                                    4.454600E+05 1.530E-01   1.00E-03 Gaia:G               
+ 347.36612589 54.85645764 I/353/gsc242                                    4.454600E+05 9.010E-02   2.00E-04 Gaia:G               
+ 347.36591243 54.85618361 I/353/gsc242                                    3.324400E+05 1.370E-01   9.00E-03 SDSS:z               
+ 347.36591196 54.85679824 I/353/gsc242                                    3.324400E+05 1.130E-02   1.10E-03 SDSS:z               
+ 347.36591196 54.85679824 I/353/gsc242                                    3.926600E+05 2.560E-02   5.00E-04 SDSS:i               
+ 347.36664418 54.85664973 I/353/gsc242                                    3.926600E+05 1.090E-01   1.00E-03 SDSS:i               
+ 347.36612301 54.85646297 I/355/gaiadr3                               0.0 3.934000E+05 1.310E-01   1.00E-03 GAIA/GAIA3:Grp       
+ 347.36612301 54.85646297 I/355/gaiadr3                               0.0 5.149000E+05 9.580E-02   3.00E-04 GAIA/GAIA3:G         
+ 347.36612301 54.85646297 I/355/gaiadr3                               0.0 5.953000E+05 7.220E-02   5.00E-04 GAIA/GAIA3:Gbp       
+ 347.36612981 54.85652755 I/358/varisum             2457390.916404   44.0 7.457500E+05 1.960E-01            HIP:Hp               
+ 347.36612981 54.85652755 I/360/syntphot                              0.0 3.801600E+05 1.410E-01            Cousins:I            
+ 347.36612981 54.85652755 I/360/syntphot                              0.0 3.926600E+05 1.510E-01            SDSS:i               
+ 347.36612981 54.85652755 I/360/syntphot                              0.0 3.926600E+05 1.360E-01            SDSS:i               
+ 347.36612981 54.85652755 I/360/syntphot                              0.0 4.634300E+05 1.150E-01            Cousins:R            
+ 347.36612981 54.85652755 I/360/syntphot                              0.0 4.799000E+05 1.130E-01            SDSS:r               
+ 347.36612981 54.85652755 I/360/syntphot                              0.0 5.481000E+05 9.040E-02            Cousins:V            
+ 347.36612981 54.85652755 I/360/syntphot                              0.0 6.219800E+05 6.480E-02            SDSS:g               
+ 347.36612981 54.85652755 I/360/syntphot                              0.0 6.876000E+05 5.120E-02            Cousins:B            
+ 347.36612981 54.85652755 I/360/syntphot                              0.0 8.519200E+05 1.650E-02            SDSS:u               
+ 347.36612981 54.85652755 I/360/syntphot                              0.0 8.565000E+05 1.750E-02            Cousins:U            
+ 347.36611400 54.85646100 II/246/out                2451172.627800 1108.6 1.368900E+05 9.480E-02   3.00E-04 Johnson:K            
+ 347.36611400 54.85646100 II/246/out                2451172.627800 1108.6 1.368900E+05 9.390E-02   1.70E-03 Johnson:K            
+ 347.36611400 54.85646100 II/246/out                2451172.627800 1108.6 1.839200E+05 1.400E-01   1.00E-03 Johnson:H            
+ 347.36611400 54.85646100 II/246/out                2451172.627800 1108.6 1.839200E+05 1.390E-01   2.00E-03 Johnson:H            
+ 347.36611400 54.85646100 II/246/out                2451172.627800 1108.6 2.398300E+05 1.600E-01   0.00E+00 Johnson:J            
+ 347.36611400 54.85646100 II/246/out                2451172.627800 1108.6 2.398300E+05 1.600E-01   3.00E-03 Johnson:J            
+ 347.36577000 54.85685000 II/271A/patch2                              0.0 5.414300E+05 8.470E-02   7.50E-03 Johnson:V            
+ 347.36613870 54.85651314 II/311/wise                                 0.0 1.357100E+04 2.190E-03            WISE:W4              
+ 347.36613870 54.85651314 II/311/wise                                 0.0 2.593400E+04 4.700E-03   1.10E-04 WISE:W3              
+ 347.36613870 54.85651314 II/311/wise                                 0.0 6.517200E+04 2.600E-02   5.00E-04 WISE:W2              
+ 347.36613870 54.85651314 II/311/wise                                 0.0 8.949000E+04 4.800E-02   1.00E-03 WISE:W1              
+ 347.36613870 54.85651314 II/311/wise                                 0.0 1.385500E+05 9.700E-02   1.80E-03 2MASS:Ks             
+ 347.36613870 54.85651314 II/311/wise                                 0.0 1.817500E+05 1.400E-01   2.00E-03 2MASS:H              
+ 347.36613870 54.85651314 II/311/wise                                 0.0 2.419600E+05 1.570E-01   3.00E-03 2MASS:J              
+ 347.36612535 54.85650420 II/328/allwise                              0.0 1.357100E+04 1.890E-03            WISE:W4              
+ 347.36612535 54.85650420 II/328/allwise                              0.0 2.593400E+04 4.730E-03   1.30E-04 WISE:W3              
+ 347.36612535 54.85650420 II/328/allwise                              0.0 6.517200E+04 2.510E-02   5.00E-04 WISE:W2              
+ 347.36612535 54.85650420 II/328/allwise                              0.0 8.949000E+04 4.640E-02   1.00E-03 WISE:W1              
+ 347.36612535 54.85650420 II/328/allwise                              0.0 1.385500E+05 9.700E-02   1.80E-03 2MASS:Ks             
+ 347.36612535 54.85650420 II/328/allwise                              0.0 1.817500E+05 1.400E-01   2.00E-03 2MASS:H              
+ 347.36612535 54.85650420 II/328/allwise                              0.0 2.419600E+05 1.570E-01   3.00E-03 2MASS:J              
+ 347.36596704 54.85659802 II/336/apass9                               0.0 3.926600E+05 1.390E-01   1.20E-02 SDSS:i'              
+ 347.36596704 54.85659802 II/336/apass9                               0.0 4.799000E+05 1.090E-01   1.00E-02 SDSS:r'              
+ 347.36596704 54.85659802 II/336/apass9                               0.0 5.414300E+05 8.700E-02   9.30E-03 Johnson:V            
+ 347.36596704 54.85659802 II/336/apass9                               0.0 6.219800E+05 6.230E-02   5.50E-03 SDSS:g'              
+ 347.36596704 54.85659802 II/336/apass9                               0.0 6.749000E+05 5.170E-02   6.60E-03 Johnson:B            
+ 347.36591243 54.85618361 II/349/ps1                2455945.544259 1160.0 3.465000E+05 1.370E-01   9.00E-03 PAN-STARRS/PS1:z     
+ 347.36664418 54.85664973 II/349/ps1                2457023.762882 1160.0 4.008000E+05 1.090E-01   1.00E-03 PAN-STARRS/PS1:i     
+ 347.36591196 54.85679824 II/349/ps1                2455376.048229 1160.0 3.124000E+05 2.060E-02   0.00E+00 PAN-STARRS/PS1:y     
+ 347.36591196 54.85679824 II/349/ps1                2455376.048229 1160.0 3.465000E+05 1.130E-02   1.10E-03 PAN-STARRS/PS1:z     
+ 347.36591196 54.85679824 II/349/ps1                2455376.048229 1160.0 4.008000E+05 2.550E-02   5.00E-04 PAN-STARRS/PS1:i     
+ 347.36602745 54.85667130 II/349/ps1                2455100.098183 1160.0 3.124000E+05 1.510E-01            PAN-STARRS/PS1:y     
+ 347.36602745 54.85667130 II/349/ps1                2455100.098183 1160.0 3.465000E+05 1.460E-01            PAN-STARRS/PS1:z     
+ 347.36602745 54.85667130 II/349/ps1                2455100.098183 1160.0 4.008000E+05 1.320E-01            PAN-STARRS/PS1:i     
+ 347.36602745 54.85667130 II/349/ps1                2455100.098183 1160.0 4.894000E+05 1.090E-01            PAN-STARRS/PS1:r     
+ 347.36602745 54.85667130 II/349/ps1                2455100.098183 1160.0 6.282000E+05 7.130E-02            PAN-STARRS/PS1:g     
+ 347.36613011 54.85652602 II/360/catalog                              0.0 1.817500E+05 1.400E-01   2.00E-03 2MASS:H              
+ 347.36613011 54.85652602 II/360/catalog                              0.0 2.419600E+05 1.570E-01   3.00E-03 2MASS:J              
+ 347.36612107 54.85652020 II/363/unwise                               0.0 6.517200E+04 2.390E-02   0.00E+00 WISE:W2              
+ 347.36612107 54.85652020 II/363/unwise                               0.0 8.949000E+04 4.560E-02   0.00E+00 WISE:W1              
+ 347.36611775 54.85652410 II/365/catwise            2457007.053102 4700.0 6.517200E+04 2.580E-02   2.00E-04 WISE:W2              
+ 347.36611775 54.85652410 II/365/catwise            2457007.053102 4700.0 8.949000E+04 5.470E-02   5.00E-04 WISE:W1              
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 1.357100E+04 1.890E-03            WISE:W4              
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 2.593400E+04 4.730E-03   1.30E-04 WISE:W3              
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 6.517200E+04 2.510E-02   5.00E-04 WISE:W2              
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 8.949000E+04 4.640E-02   1.00E-03 WISE:W1              
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 1.385500E+05 9.700E-02   1.80E-03 2MASS:Ks             
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 1.817500E+05 1.400E-01   2.00E-03 2MASS:H              
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 2.419600E+05 1.570E-01   3.00E-03 2MASS:J              
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 4.454600E+05 9.010E-02   2.00E-04 Gaia:G               
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 5.414300E+05 8.700E-02   9.30E-03 Johnson:V            
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 5.414300E+05 9.060E-02            Johnson:V            
+ 347.36597000 54.85660000 II/366/catalog            2457137.127650  105.0 6.749000E+05 5.170E-02   6.60E-03 Johnson:B            
+ 347.36612963 54.85652564 IV/35/wn18_b10                              0.0 4.454600E+05 9.010E-02            Gaia:G               
+ 347.36612589 54.85645764 IV/38/tic                                   0.0 1.357100E+04 1.890E-03            WISE:W4              
+ 347.36612589 54.85645764 IV/38/tic                                   0.0 2.593400E+04 4.730E-03   1.30E-04 WISE:W3              
+ 347.36612589 54.85645764 IV/38/tic                                   0.0 6.517200E+04 2.510E-02   5.00E-04 WISE:W2              
+ 347.36612589 54.85645764 IV/38/tic                                   0.0 8.949000E+04 4.640E-02   1.00E-03 WISE:W1              
+ 347.36612589 54.85645764 IV/38/tic                                   0.0 1.385500E+05 9.700E-02   1.80E-03 2MASS:Ks             
+ 347.36612589 54.85645764 IV/38/tic                                   0.0 1.839200E+05 1.390E-01   2.00E-03 Johnson:H            
+ 347.36612589 54.85645764 IV/38/tic                                   0.0 2.398300E+05 1.600E-01   3.00E-03 Johnson:J            
+ 347.36612589 54.85645764 IV/38/tic                                   0.0 4.454600E+05 9.010E-02   2.00E-04 Gaia:G               
+ 347.36612589 54.85645764 IV/38/tic                                   0.0 5.414300E+05 9.350E-02   1.30E-03 Johnson:V            
+ 347.36612589 54.85645764 IV/38/tic                                   0.0 6.749000E+05 5.740E-02   1.15E-02 Johnson:B            
+ 347.36612589 54.85645764 IV/39/tic82                                 0.0 1.357100E+04 1.890E-03            WISE:W4              
+ 347.36612589 54.85645764 IV/39/tic82                                 0.0 2.593400E+04 4.730E-03   1.30E-04 WISE:W3              
+ 347.36612589 54.85645764 IV/39/tic82                                 0.0 6.517200E+04 2.510E-02   5.00E-04 WISE:W2              
+ 347.36612589 54.85645764 IV/39/tic82                                 0.0 8.949000E+04 4.640E-02   1.00E-03 WISE:W1              
+ 347.36612589 54.85645764 IV/39/tic82                                 0.0 1.385500E+05 9.700E-02   1.80E-03 2MASS:Ks             
+ 347.36612589 54.85645764 IV/39/tic82                                 0.0 1.839200E+05 1.390E-01   2.00E-03 Johnson:H            
+ 347.36612589 54.85645764 IV/39/tic82                                 0.0 2.398300E+05 1.600E-01   3.00E-03 Johnson:J            
+ 347.36612589 54.85645764 IV/39/tic82                                 0.0 4.454600E+05 9.010E-02   2.00E-04 Gaia:G               
+ 347.36612589 54.85645764 IV/39/tic82                                 0.0 5.414300E+05 9.350E-02   1.30E-03 Johnson:V            
+ 347.36612589 54.85645764 IV/39/tic82                                 0.0 6.749000E+05 5.740E-02   1.15E-02 Johnson:B            
+ 347.36611889 54.85644500 V/136/tycall                                0.0 5.636300E+05 8.980E-02   8.40E-03 HIP:VT               
+ 347.36611889 54.85644500 V/136/tycall                                0.0 7.132800E+05 4.580E-02   6.40E-03 HIP:BT               
+ 347.36612596 54.85645766 J/ApJ/867/105/refcat2                       0.0 1.817500E+05 1.400E-01   2.00E-03 2MASS:H              
+ 347.36612596 54.85645766 J/ApJ/867/105/refcat2                       0.0 2.419600E+05 1.570E-01   2.00E-03 2MASS:J              
+ 347.36612596 54.85645766 J/ApJ/867/105/refcat2                       0.0 4.454600E+05 1.530E-01   1.00E-03 Gaia:G               
+ 347.36612596 54.85645766 J/ApJ/867/105/refcat2                       0.0 4.454600E+05 6.030E-02   4.00E-04 Gaia:G               
+ 347.36612596 54.85645766 J/ApJ/867/105/refcat2                       0.0 4.454600E+05 9.010E-02   2.00E-04 Gaia:G               
+ 347.36613000 54.85652000 J/ApJS/237/28/table2                        0.0 1.357100E+04 1.890E-03            WISE:W4              
+ 347.36613000 54.85652000 J/ApJS/237/28/table2                        0.0 2.593400E+04 4.730E-03            WISE:W3              
+ 347.36613000 54.85652000 J/ApJS/237/28/table2                        0.0 6.517200E+04 2.510E-02            WISE:W2              
+ 347.36613000 54.85652000 J/ApJS/237/28/table2                        0.0 8.949000E+04 4.660E-02            WISE:W1              
+ 347.36613000 54.85652000 J/ApJS/237/28/table2                        0.0 1.385500E+05 9.700E-02            2MASS:Ks             
+ 347.36613000 54.85652000 J/ApJS/237/28/table2                        0.0 1.817500E+05 1.400E-01            2MASS:H              
+ 347.36613000 54.85652000 J/ApJS/237/28/table2                        0.0 2.419600E+05 1.570E-01            2MASS:J              
+ 347.36612589 54.85645764 J/A+A/653/A98/aspic1_1                          5.414300E+05 8.890E-02   4.83E-02 Johnson:V            
+ 347.36611400 54.85646600 J/AJ/156/102/table9                         0.0 1.357100E+04 1.890E-03            WISE:W4              
+ 347.36611400 54.85646600 J/AJ/156/102/table9                         0.0 2.593400E+04 4.730E-03            WISE:W3              
+ 347.36611400 54.85646600 J/AJ/156/102/table9                         0.0 6.517200E+04 2.510E-02            WISE:W2              
+ 347.36611400 54.85646600 J/AJ/156/102/table9                         0.0 8.949000E+04 4.640E-02            WISE:W1              
+ 347.36611400 54.85646600 J/AJ/156/102/table9                         0.0 1.385500E+05 9.700E-02            2MASS:Ks             
+ 347.36611400 54.85646600 J/AJ/156/102/table9                         0.0 1.817500E+05 1.400E-01            2MASS:H              
+ 347.36611400 54.85646600 J/AJ/156/102/table9                         0.0 2.419600E+05 1.570E-01            2MASS:J              
+ 347.36611400 54.85646600 J/AJ/156/102/table9                         0.0 4.454600E+05 9.730E-02            Gaia:G               
+ 347.36613000 54.85652000 J/AJ/156/241/table4                         0.0 3.124000E+05 9.200E-02            PAN-STARRS/PS1:y     
+ 347.36613000 54.85652000 J/AJ/156/241/table4                         0.0 3.465000E+05 9.220E-02            PAN-STARRS/PS1:z     
+ 347.36613000 54.85652000 J/AJ/156/241/table4                         0.0 4.008000E+05 9.380E-02            PAN-STARRS/PS1:i     
+ 347.36613000 54.85652000 J/AJ/156/241/table4                         0.0 4.894000E+05 9.520E-02            PAN-STARRS/PS1:r     
+ 347.36613000 54.85652000 J/AJ/156/241/table4                         0.0 6.282000E+05 7.660E-02            PAN-STARRS/PS1:g     
+ 347.36611970 54.85646470 J/MNRAS/463/4210/ucac4rpm                   0.0 5.414300E+05 8.260E-02            Johnson:V            
+ 347.36611970 54.85646470 J/MNRAS/463/4210/ucac4rpm                   0.0 6.749000E+05 4.780E-02            Johnson:B            
+ 347.36610889 54.85644611 J/MNRAS/471/770/table1                      0.0 2.593400E+04 5.170E-03            WISE:W3              
+ 347.36610889 54.85644611 J/MNRAS/471/770/table1                      0.0 6.517200E+04 2.520E-02            WISE:W2              
+ 347.36610889 54.85644611 J/MNRAS/471/770/table1                      0.0 8.949000E+04 4.680E-02            WISE:W1              
+ 347.36610889 54.85644611 J/MNRAS/471/770/table1                      0.0 4.994200E+05 8.980E-02            Subaru/Suprime:IA598 
+ 347.36610889 54.85644611 J/MNRAS/471/770/table1                      0.0 5.414300E+05 8.690E-02            Johnson:V            
+ 347.36610889 54.85644611 J/MNRAS/471/770/table1                      0.0 6.749000E+05 4.930E-02            Johnson:B            
+ 347.36612589 54.85645764 J/MNRAS/486/251/tablea1                     0.0 4.454600E+05 9.010E-02   2.00E-04 Gaia:G               
+ 347.36612083 54.85646389 J/other/OEJV/185/czev     2453903.093000 4700.0 2.419600E+05 1.570E-01            2MASS:J              
+ 347.36612083 54.85646389 J/other/OEJV/185/czev     2453903.093000 4700.0 5.414300E+05 8.260E-02            Johnson:V            
