@@ -179,8 +179,13 @@ def plotModelResidualsFigsize(b: phoebe.Bundle, figsize: tuple[float, float], da
 
 	datasetGroupsFigures = {}
 	for datasets in datasetGroups:
+		maxFlux = 0
+		for d in datasets:
+			maxFlux = max([maxFlux, max(b.get_value(qualifier='fluxes', context='dataset', dataset=d))])
+		maxFluxScale = 1 + 0.12*(len(datasets))
+
 		fig = plt.figure(figsize=figsize)
-		b.plot(x='phase', model=model, dataset=datasets, axorder=1, fig=fig, s={'dataset':0.008}, **(plot_kwargs | model_kwargs))
+		b.plot(x='phase', model=model, dataset=datasets, axorder=1, fig=fig, s={'dataset':0.008, 'model': 0.01}, ylim=(None, maxFluxScale*maxFlux), **(plot_kwargs | model_kwargs))
 		b.plot(x='phase', y='residuals', model=model, dataset=datasets, axorder=2, fig=fig, subplot_grid=(1,2), s=0.008, show=True, **(plot_kwargs | residuals_kwargs))
 		datasetGroupsFigures["-".join(datasets)] = fig
 	return datasetGroupsFigures
@@ -242,17 +247,11 @@ def printChi2(b: phoebe.Bundle, model: str):
 	
 	print(model, "=================================================", sep='\n')
 
-	# try:
-	# 	print('\t', "Gaia (Raw) -", np.sum(b.calculate_chi2(model=model, dataset=rawGaiaDatasets)))
-	# 	for gd in rawGaiaDatasets:
-	# 		print('\t\t', gd, "-", np.sum(b.calculate_chi2(model=model, dataset=gd)))
-	# except: pass
-	
-	print("------------------------------------------------")
-
 	try:
 		print('\t', "TESS -", np.sum(b.calculate_chi2(model=model, dataset='lcTess')))
 	except: pass
+
+	print("------------------------------------------------")
 
 	try:
 		print('\t', "OAN SPM -", np.sum(b.calculate_chi2(model=model, dataset=spmDatasets)))
@@ -262,13 +261,18 @@ def printChi2(b: phoebe.Bundle, model: str):
 
 	print("------------------------------------------------")
 
-	print('\t', "ZTF -", np.sum(b.calculate_chi2(model=model, dataset=ztfDatasets)))
-	for zd in ztfDatasets:
-		try:
-			print('\t\t', zd, "-", np.sum(b.calculate_chi2(model=model, dataset=zd)))
-		except: 
-			print("\t\t", zd, "Not found in model")
+	try:
+		print('\t', "ZTF -", np.sum(b.calculate_chi2(model=model, dataset=ztfDatasets)))
+		for zd in ztfDatasets:
+			try:
+				print('\t\t', zd, "-", np.sum(b.calculate_chi2(model=model, dataset=zd)))
+			except: 
+				print("\t\t", zd, "Not found in model")
+	except:
+		pass
 
-def printAllModelsChi2(b: phoebe.Bundle):
+def printAllModelsChi2(b: phoebe.Bundle, filters: list[str] = []):
 	for m in b.models:
-		printChi2(b, m)
+		for f in filters:
+			if f in m:
+				printChi2(b, m)
