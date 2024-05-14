@@ -75,3 +75,28 @@ def optimize_params(b: phoebe.Bundle, fit_twigs: list[str], label: str, export: 
 	gen_utils.abilitateDatasets(b, abilitatedDatasets)
 	
 	return f'opt_{label}', f'opt_{label}_solution'
+
+def run_dc(b: phoebe.Bundle, num_iter: int, solver_name: str = None) -> str:
+	"""
+	Run differential corrections algorithm for the specified number of iterations.
+
+	Assumes a DC solver under the name of passed in 'solver_name' exists, which 
+	will already have the steps per parameter and fit_parameters defined.
+
+	If no solver under the name of 'solver_name' exists, it will assume a solver
+	under the name 'opt_dc' exists.
+
+	Final optimizer solution saved as whole bundle.
+
+	Returns solution name.
+	"""
+	if not solver_name:
+		solver_name = 'opt_dc'
+	solution_name = f"{solver_name}_solution"
+
+	for i in range(num_iter):
+		print('', i, "-------------------------", sep='\n')
+		b.run_solver(solver=solver_name, solution=solution_name, overwrite=True)
+		gen_utils.printFittedVals(b, solution=solution_name)
+		b.adopt_solution(solution_name)
+	return solution_name
