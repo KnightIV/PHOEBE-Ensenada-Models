@@ -273,6 +273,9 @@ def printChi2(b: phoebe.Bundle, model: str):
 
 def printAllModelsChi2(b: phoebe.Bundle, filters: list[str] = []):
 	for m in b.models:
-		for f in filters:
-			if f in m:
-				printChi2(b, m)
+		if len(filters) > 0:
+			for f in filters:
+				if f in m:
+					printChi2(b, m)
+		else:
+			printChi2(b, m)
