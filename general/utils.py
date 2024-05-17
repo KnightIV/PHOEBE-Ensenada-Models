@@ -1,4 +1,6 @@
 import os
+import gzip
+import shutil
 
 import phoebe
 from phoebe import u
@@ -103,7 +105,7 @@ def printFittedTwigsConstraints(b: phoebe.Bundle, solution: str, units: dict[str
 				f"{quantity.to(units.get(fitTwig, quantity.unit)):.5f}", 
 				"(Not adopting)" if adopt_twigs is not None and not __matchAnyTwig(fitTwig, adopt_twigs) else "")
 
-def saveBundle(b: phoebe.Bundle, bundleName: str, subfolder: str = None, overwrite: bool = True) -> str:
+def saveBundle(b: phoebe.Bundle, bundleName: str, subfolder: str = None, overwrite: bool = True, compact: bool = True, compress: bool = True) -> str:
 	if not os.path.exists("bundle-saves"):
 		os.mkdir("bundle-saves")
 
@@ -117,8 +119,31 @@ def saveBundle(b: phoebe.Bundle, bundleName: str, subfolder: str = None, overwri
 			print(f"CAUTION: overwriting {os.path.join(saveFolder, bundleName)}")
 		else:
 			print(f"NOT OVERWRITING: {os.path.join(saveFolder, bundleName)} bundle already exists.")
+			return
 	
-	return b.save(f"{saveFolder}/{bundleName}")
+	jsonFile = b.save(f"{saveFolder}/{bundleName}.json", compact=compact)
+	if compress:
+		with open(jsonFile, 'rb') as f_in:
+			with gzip.open(f"{jsonFile}.gz", 'wb') as f_out:
+				shutil.copyfileobj(f_in, f_out)
+		os.remove(jsonFile)
+		return f"{jsonFile}.gz"
+	
+	return jsonFile
+
+def loadBundle(bundleName: str, subfolder: str = None) -> phoebe.Bundle:
+	saveFolder = "bundle-saves"
+	if subfolder:
+		saveFolder = f"bundle-saves/{subfolder}"
+
+	tempJsonFile = f"{saveFolder}/{bundleName}.json"
+	with gzip.open(f"{saveFolder}/{bundleName}.json.gz", 'rb') as f_in:
+		with open(tempJsonFile, 'wb') as f_out:
+			shutil.copyfileobj(f_in, f_out)
+	
+	b = phoebe.load(tempJsonFile)
+	os.remove(tempJsonFile)
+	return b
 
 def genAnimatedMesh(b: phoebe.Bundle, logger=None, meshDataset="mesh01", fc='teffs', **plot_kwargs):
 	if logger: logger.setLevel('ERROR')
