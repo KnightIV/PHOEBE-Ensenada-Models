@@ -43,7 +43,10 @@ def load_bundle(path: str) -> phoebe.Bundle:
 	os.remove(tempJsonFile)
 	return b
 
-def save_bundle(b: phoebe.Bundle, path: str, compact: bool = True, compress: bool = True) -> str:	
+def save_bundle(b: phoebe.Bundle, path: str, compact: bool = True, compress: bool = True) -> str:
+	if '.json' not in path:
+		path = f"{path}.json"
+		
 	jsonFile = b.save(path, compact=compact)
 	if compress:
 		with open(jsonFile, 'rb') as f_in:
@@ -54,32 +57,35 @@ def save_bundle(b: phoebe.Bundle, path: str, compact: bool = True, compress: boo
 	
 	return jsonFile
 
-def run_dc(b: phoebe.Bundle, num_iter: int) -> None:
+def run_dc(b: phoebe.Bundle, num_iter: int, solver: str, solution: str) -> None:
 	"""
 	Run differential corrections algorithm for the specified number of iterations.
-
-	Assumes a DC solver under the name of opt_dc exists, which will already have
-	the steps per parameter and fit_parameters defined.
 
 	Final optimizer solution saved as whole bundle.
 	"""
 	for i in range(num_iter):
 		print('', i, "-------------------------", sep='\n')
-		b.run_solver(solver='opt_dc', solution='opt_dc_solution', overwrite=True)
-		printFittedVals(b, solution='opt_dc_solution')
-		b.adopt_solution('opt_dc_solution')
+		b.run_solver(solver=solver, solution=solution, overwrite=True)
+		printFittedVals(b, solution=solution)
+		b.adopt_solution(solution)
 
 if __name__ == '__main__':
+	if len(sys.argv) != 6:
+		print("Usage: python dc-optimizer.py {solver} {solution} {num_iter} {bundle_start_path} {result_path}")
+		exit(1)
+
 	logger = phoebe.logger(clevel='WARNING')
 
 	# arguments expected to script
+        # solver name
+		# solution name
 		# bundle path to run corrections on
 		# number of iterations to perform differential corrections
-	_, bundle_start, num_iter, result_path = sys.argv
+	_, solver_name, solution_name, num_iter, bundle_start, result_path = sys.argv
 
 	# b: phoebe.Bundle = phoebe.load(bundle_start)
 	b = load_bundle(bundle_start)
-	run_dc(b, int(num_iter))
+	run_dc(b, num_iter=int(num_iter), solver=solver_name, solution=solution_name)
 	# b.save(result_path, compact=True)
 	save_bundle(b, result_path)
 	
