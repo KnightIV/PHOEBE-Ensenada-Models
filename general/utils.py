@@ -57,6 +57,11 @@ ZTF_COLORS = {
 	'lcZtfITrimmed@model': 'goldenrod'
 }
 
+GAIA_COLORS = {'lcGaiaG@dataset':'green', 'lcGaiaRP@dataset':'red', 'lcGaiaBP@dataset':'blue',
+				'lcGaiaG@model':'darkgreen', 'lcGaiaRP@model':'darkred', 'lcGaiaBP@model':'darkblue',
+
+			   'Gaia:G':'green', 'Gaia:RP':'red', 'Gaia:BP':'blue',}
+
 def displayAnims(rows: int, cols: int, *anims: FuncAnimation):
 	plt.rcParams["animation.html"] = "html5"
 	plt.rcParams["figure.figsize"] = (15,8)
@@ -193,7 +198,7 @@ def plotModelResidualsFigsize(b: phoebe.Bundle, figsize: tuple[float, float], da
 	"""
 	defaultPlotKwargs = {
 		'marker': {'dataset': '.'},
-		'color': SPM_COLORS | TESS_COLORS | ZTF_COLORS,
+		'color': SPM_COLORS | TESS_COLORS | ZTF_COLORS | GAIA_COLORS,
 		'legend': True,
 		'ls': {'model': 'solid'}
 	}
