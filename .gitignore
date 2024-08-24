@@ -3,3 +3,5 @@
 **/__pycache__
 gaia-credentials.txt
 .idea
+.zip
+.ipynb_checkpoints
