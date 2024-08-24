@@ -142,12 +142,17 @@ def loadBundle(bundleName: str, subfolder: str = None) -> phoebe.Bundle:
 		saveFolder = f"bundle-saves/{subfolder}"
 
 	tempJsonFile = f"{saveFolder}/{bundleName}.json"
-	with gzip.open(f"{saveFolder}/{bundleName}.json.gz", 'rb') as f_in:
-		with open(tempJsonFile, 'wb') as f_out:
-			shutil.copyfileobj(f_in, f_out)
+	isCompressed = os.path.exists(tempJsonFile + ".gz")
+
+	if isCompressed:
+		with gzip.open(f"{saveFolder}/{bundleName}.json.gz", 'rb') as f_in:
+			with open(tempJsonFile, 'wb') as f_out:
+				shutil.copyfileobj(f_in, f_out)
 	
 	b = phoebe.load(tempJsonFile)
-	os.remove(tempJsonFile)
+
+	if isCompressed:
+		os.remove(tempJsonFile)
 	return b
 
 def genAnimatedMesh(b: phoebe.Bundle, logger=None, meshDataset="mesh01", fc='teffs', **plot_kwargs):
@@ -191,8 +196,8 @@ def plotFigSize(b: phoebe.Bundle, figsize: tuple[float, float], **plot_kwargs):
 	fig = plt.figure(figsize=figsize)
 	b.plot(fig=fig, **plot_kwargs)
 
-def plotModelResidualsFigsize(b: phoebe.Bundle, figsize: tuple[float, float], datasetGroups: list[list[str] | str], model: str, 
-							  model_kwargs: dict['str', 'str'] = {}, residuals_kwargs: dict['str', 'str'] = {}, **plot_kwargs) -> dict[str, Figure]:
+def plotModelResidualsFigsize(b: phoebe.Bundle, figsize: tuple[float, float], datasetGroups: list[list[str] | str], model: str, phase=True,
+							  model_kwargs: dict['str', any] = {}, residuals_kwargs: dict['str', any] = {}, scale_max_flux=True, **plot_kwargs) -> None:
 	"""
 	Plots specified model for the datasets given. Plots dataset(s) with model overlay alongside residuals side-by-side.
 	"""
@@ -205,20 +210,24 @@ def plotModelResidualsFigsize(b: phoebe.Bundle, figsize: tuple[float, float], da
 	for key, defaultVal in defaultPlotKwargs.items():
 		plot_kwargs[key] = plot_kwargs.get(key, defaultVal)
 
-	residuals_kwargs['marker'] = '.'
+	model_kwargs['s'] = model_kwargs.get('s', {'dataset':0.008, 'model': 0.01})
 
-	datasetGroupsFigures = {}
-	for datasets in datasetGroups:
+	residuals_kwargs['marker'] = residuals_kwargs.get('marker', '.')
+	residuals_kwargs['s'] = residuals_kwargs.get('s', 0.008)
+
+	shouldScale = scale_max_flux and isinstance(datasetGroups[0], list)
+
+	for ds in datasetGroups:
 		maxFlux = 0
-		for d in datasets:
-			maxFlux = max([maxFlux, max(b.get_value(qualifier='fluxes', context='dataset', dataset=d))])
-		maxFluxScale = 1 + 0.12*(len(datasets))
+		maxFluxScale = 1
+		if shouldScale:
+			for d in ds:
+				maxFlux = max([maxFlux, max(b.get_value(qualifier='fluxes', context='dataset', dataset=d))])
+			maxFluxScale = 1 + 0.12*(len(ds))
 
 		fig = plt.figure(figsize=figsize)
-		b.plot(x='phase', model=model, dataset=datasets, axorder=1, fig=fig, s={'dataset':0.008, 'model': 0.01}, ylim=(None, maxFluxScale*maxFlux), **(plot_kwargs | model_kwargs))
-		b.plot(x='phase', y='residuals', model=model, dataset=datasets, axorder=2, fig=fig, subplot_grid=(1,2), s=0.008, show=True, **(plot_kwargs | residuals_kwargs))
-		datasetGroupsFigures["-".join(datasets)] = fig
-	return datasetGroupsFigures
+		b.plot(x=('phase' if phase else 'times'), model=model, dataset=ds, axorder=1, fig=fig, ylim=(None, maxFluxScale*maxFlux if shouldScale else None), **(plot_kwargs | model_kwargs))
+		b.plot(x=('phase' if phase else 'times'), y='residuals', model=model, dataset=ds, axorder=2, fig=fig, subplot_grid=(1,2), show=True, **(plot_kwargs | residuals_kwargs))
 
 def exportCompute(b: phoebe.Bundle, model: str, datasets: list[str], subfolder: str = None, **compute_kwargs) -> None:
 	if not os.path.exists("external-compute"):
@@ -274,6 +283,7 @@ def printChi2(b: phoebe.Bundle, model: str):
 	# normGaiaDatasets = [d for d in b.datasets if 'norm' in d and 'gaia' in d]
 	ztfDatasets = [d for d in b.datasets if 'Ztf' in d]
 	spmDatasets = [d for d in b.datasets if 'Spm' in d]
+	gaiaDatasets = [d for d in b.datasets if 'Gaia' in d]
 	
 	print(model, "=================================================", sep='\n')
 
@@ -300,6 +310,14 @@ def printChi2(b: phoebe.Bundle, model: str):
 				print("\t\t", zd, "Not found in model")
 	except:
 		pass
+
+	print("------------------------------------------------")
+
+	try:
+		print('\t', "Gaia -", np.sum(b.calculate_chi2(model=model, dataset=gaiaDatasets)))
+		for d in gaiaDatasets:
+			print('\t\t', d, "-", np.sum(b.calculate_chi2(model=model, dataset=d)))
+	except: pass
 
 def printAllModelsChi2(b: phoebe.Bundle, filters: list[str] = []):
 	for m in b.models:
