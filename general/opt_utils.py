@@ -47,7 +47,7 @@ def adopt_solution(b: phoebe.Bundle, label:str=None, solution_name:str=None,
 def optimize_params(b: phoebe.Bundle, fit_twigs: list[str], label: str, export: bool, datasets: list[str], subfolder: str=None, 
 					optimizer='optimizer.nelder_mead', compute='phoebe01', overwrite_export=True,
 					**solver_kwargs):
-	if not 'maxiter' in solver_kwargs.keys():
+	if optimizer != 'optimizer.differential_corrections' and not 'maxiter' in solver_kwargs.keys():
 		solver_kwargs['maxiter'] = 200 if export else 10
 
 	abilitatedDatasets = [d for d in b.datasets if b.get_value(qualifier='enabled', dataset=d)]
@@ -61,7 +61,7 @@ def optimize_params(b: phoebe.Bundle, fit_twigs: list[str], label: str, export: 
 		if subfolder is not None:
 			os.makedirs(os.path.join('external-jobs', subfolder), exist_ok=True)
 		
-		exportPath = f'./external-jobs{f"/{subfolder}" if subfolder is not None else ""}/{optimizer}_opt_{label}.ecpy'
+		exportPath = f'./external-jobs{f"/{subfolder}" if subfolder is not None else ""}/{optimizer}_opt_{label}.py'
 		if not overwrite_export and os.path.exists(exportPath):
 			print("Solver already exists |", exportPath)
 		else:
